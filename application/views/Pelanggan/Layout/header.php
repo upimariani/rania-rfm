@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Ogani, unica, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Ogani | Template</title>
+	<title>RANIA SPORT - RFM</title>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -29,79 +29,41 @@
 		<div class="loader"></div>
 	</div>
 
-	<!-- Humberger Begin -->
-	<div class="humberger__menu__overlay"></div>
-	<div class="humberger__menu__wrapper">
-		<div class="humberger__menu__logo">
-			<a href="#"><img src="img/logo.png" alt=""></a>
-		</div>
-		<div class="humberger__menu__cart">
-			<ul>
-				<li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-				<li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-			</ul>
-			<div class="header__cart__price">item: <span>$150.00</span></div>
-		</div>
-		<div class="humberger__menu__widget">
-			<div class="header__top__right__language">
-				<img src="img/language.png" alt="">
-				<div>English</div>
-				<span class="arrow_carrot-down"></span>
-				<ul>
-					<li><a href="#">Spanis</a></li>
-					<li><a href="#">English</a></li>
-				</ul>
-			</div>
-			<div class="header__top__right__auth">
-				<a href="#"><i class="fa fa-user"></i> Login</a>
-			</div>
-		</div>
-		<nav class="humberger__menu__nav mobile-menu">
-			<ul>
-				<li class="active"><a href="./index.html">Home</a></li>
-				<li><a href="./shop-grid.html">Shop</a></li>
-				<li><a href="#">Pages</a>
-					<ul class="header__menu__dropdown">
-						<li><a href="./shop-details.html">Shop Details</a></li>
-						<li><a href="./shoping-cart.html">Shoping Cart</a></li>
-						<li><a href="./checkout.html">Check Out</a></li>
-						<li><a href="./blog-details.html">Blog Details</a></li>
-					</ul>
-				</li>
-				<li><a href="./blog.html">Blog</a></li>
-				<li><a href="./contact.html">Contact</a></li>
-			</ul>
-		</nav>
-		<div id="mobile-menu-wrap"></div>
-		<div class="header__top__right__social">
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-linkedin"></i></a>
-			<a href="#"><i class="fa fa-pinterest-p"></i></a>
-		</div>
-		<div class="humberger__menu__contact">
-			<ul>
-				<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-				<li>Free Shipping for all Order of $99</li>
-			</ul>
-		</div>
-	</div>
-	<!-- Humberger End -->
-
 	<!-- Header Section Begin -->
 	<header class="header">
 		<div class="header__top">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6 col-md-6">
+					<div class="col-lg-8 col-md-6">
 						<div class="header__top__left">
 							<ul>
-								<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-								<li>Free Shipping for all Order of $99</li>
+								<?php
+								if ($this->session->userdata('id_pelanggan')) {
+									$dt_pelanggan = $this->db->query("SELECT*FROM pelanggan WHERE id_pelanggan='" . $this->session->userdata('id_pelanggan') . "'")->row();
+									$lm = $dt_pelanggan->level_member;
+									if ($lm == '1') {
+										$lvm = 'Lost Customer';
+									} else if ($lm == '2') {
+										$lvm = 'At Risk Customer';
+									} else if ($lm == '3') {
+										$lvm = 'Potensial Customer';
+									} else if ($lm == '4') {
+										$lvm = 'Loyal Customer';
+									} else if ($lm == '5') {
+										$lvm = 'Champion Customer';
+									} ?>
+									<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+									<li>Selamat Datang, <strong><?= $dt_pelanggan->nama_pelanggan ?></strong> Level Member Anda <strong><?= $lvm ?></strong></li>
+								<?php
+								}
+
+
+								?>
+
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-6 col-md-6">
+					<div class="col-lg-4 col-md-6">
 						<div class="header__top__right">
 							<div class="header__top__right__social">
 								<a href="#"><i class="fa fa-facebook"></i></a>
@@ -109,17 +71,19 @@
 								<a href="#"><i class="fa fa-linkedin"></i></a>
 								<a href="#"><i class="fa fa-pinterest-p"></i></a>
 							</div>
-							<div class="header__top__right__language">
-								<img src="img/language.png" alt="">
-								<div>English</div>
-								<span class="arrow_carrot-down"></span>
-								<ul>
-									<li><a href="#">Spanis</a></li>
-									<li><a href="#">English</a></li>
-								</ul>
-							</div>
 							<div class="header__top__right__auth">
-								<a href="#"><i class="fa fa-user"></i> Login</a>
+								<?php
+								if ($this->session->userdata('id_pelanggan')) {
+								?>
+									<a href="<?= base_url('Pelanggan/cLogin/logout') ?>"><i class="fa fa-user"></i> Logout</a>
+								<?php
+								} else {
+								?>
+									<a href="<?= base_url('Pelanggan/cLogin') ?>"><i class="fa fa-user"></i> Login</a>
+								<?php
+								}
+								?>
+
 							</div>
 						</div>
 					</div>
@@ -130,35 +94,57 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="header__logo">
-						<a href="./index.html"><img src="img/logo.png" alt=""></a>
+						<a href="./index.html"><img style="width: 180px;" src="<?= base_url('asset/rania.png') ?>" alt=""></a>
+
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<nav class="header__menu">
 						<ul>
-							<li class="active"><a href="./index.html">Home</a></li>
-							<li><a href="./shop-grid.html">Shop</a></li>
-							<li><a href="#">Pages</a>
-								<ul class="header__menu__dropdown">
-									<li><a href="./shop-details.html">Shop Details</a></li>
-									<li><a href="./shoping-cart.html">Shoping Cart</a></li>
-									<li><a href="./checkout.html">Check Out</a></li>
-									<li><a href="./blog-details.html">Blog Details</a></li>
-								</ul>
-							</li>
-							<li><a href="./blog.html">Blog</a></li>
-							<li><a href="./contact.html">Contact</a></li>
+							<li <?php if ($this->uri->segment(1) == 'Pelanggan' && $this->uri->segment(2) == 'cHome') {
+									echo 'class="active"';
+								}  ?>><a href="<?= base_url('Pelanggan/cHome') ?>">Home</a></li>
+							<?php
+							if ($this->session->userdata('id_pelanggan')) {
+							?>
+								<li <?php if ($this->uri->segment(1) == 'Pelanggan' && $this->uri->segment(2) == 'cKatalog') {
+										echo 'class="active"';
+									}  ?>><a href="<?= base_url('Pelanggan/cKatalog') ?>">Produk</a></li>
+
+								<li <?php if ($this->uri->segment(1) == 'Pelanggan' && $this->uri->segment(2) == 'cPesananSaya') {
+										echo 'class="active"';
+									}  ?>><a href="<?= base_url('Pelanggan/cPesananSaya') ?>">Pesanan Saya</a></li>
+							<?php
+							}
+							?>
+
 						</ul>
 					</nav>
 				</div>
 				<div class="col-lg-3">
-					<div class="header__cart">
-						<ul>
-							<li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-							<li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-						</ul>
-						<div class="header__cart__price">item: <span>$150.00</span></div>
-					</div>
+					<?php
+					if ($this->session->userdata('id_pelanggan')) {
+					?>
+						<div class="header__cart">
+							<ul>
+								<?php
+								$qty = 0;
+								foreach ($this->cart->contents() as $key => $value) {
+									$qty += $value['qty'];
+								}
+								if ($qty != '0') {
+								?>
+									<li><a href="<?= base_url('Pelanggan/cCart') ?>"><i class="fa fa-shopping-bag"></i> <span><?= $qty ?></span></a></li>
+							</ul>
+							<div class="header__cart__price">item: <span>Rp. <?= number_format($this->cart->total()) ?></span>
+							</div>
+					<?php
+								}
+							}
+					?>
+
+
+						</div>
 				</div>
 			</div>
 			<div class="humberger__open">

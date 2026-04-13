@@ -7,8 +7,8 @@ class Ongkir extends CI_Controller
 
 
 	// private $api_key = '3f018925eeb63642fc6a25c862a54db5';
-	// private $api_key = '7jLX9MbP213ff18674eab1e29WSBIimb';
-	private $api_key = '6bad9044fb6fdb33caac381cb5b5bc5c';
+	private $api_key = '7jLX9MbP213ff18674eab1e29WSBIimb';
+	// private $api_key = '6bad9044fb6fdb33caac381cb5b5bc5c';
 	public function provinsi()
 	{
 
@@ -126,7 +126,9 @@ class Ongkir extends CI_Controller
 			echo '<pre>';
 			print_r($array_response['data']);
 			echo '</pre>';
+
 			$data_kota = $array_response['data'];
+
 			echo '<option value="">--Pilih Kota--</option>';
 			foreach ($data_kota as $key => $value) {
 				echo "<option value='" . $value['name'] . "'id_kota='" . $value['id'] . "'>" . $value['name'] . "</option>";
@@ -203,7 +205,7 @@ class Ongkir extends CI_Controller
 			CURLOPT_TIMEOUT => 30,
 			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 			CURLOPT_CUSTOMREQUEST => "POST",
-			CURLOPT_POSTFIELDS => "origin=" . $id_kota_asal . "&destination=114&weight=" . $berat . "&courier=" . $expedisi . "&price=lowest",
+			CURLOPT_POSTFIELDS => "origin=" . $id_kota_asal . "&destination=1224&weight=" . $berat . "&courier=" . $expedisi . "&price=lowest",
 			CURLOPT_HTTPHEADER => array(
 				"content-type: application/x-www-form-urlencoded",
 				"key: $this->api_key"
