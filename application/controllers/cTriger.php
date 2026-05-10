@@ -24,6 +24,17 @@ class cTriger extends CI_Controller
 			$this->db->update('transaksi', $data);
 		}
 	}
+	public function id_pelanggan()
+	{
+		$dt = $this->db->query("SELECT pelanggan.id_pelanggan as id_pel, transaksi.id_pelanggan as id_tr, t_id FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.t_id")->result();
+		foreach ($dt as $key => $value) {
+			$data = array(
+				'id_pelanggan' => $value->id_pel
+			);
+			$this->db->where('id_pelanggan', $value->id_pel);
+			$this->db->update('transaksi', $data);
+		}
+	}
 }
 
 /* End of file cTriger.php */

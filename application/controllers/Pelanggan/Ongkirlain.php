@@ -2,14 +2,14 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Ongkir extends CI_Controller
+class Ongkirlain extends CI_Controller
 {
 
 
-	// private $api_key = '3f018925eeb63642fc6a25c862a54db5';
+	private $api_key = '3f018925eeb63642fc6a25c862a54db5';
 	// private $api_key = '7jLX9MbP213ff18674eab1e29WSBIimb';
-	// private $api_key = 'hIBhDbBxbaa8bab72fbf0d715fcGIAKo';
-	private $api_key = '968af9512a7eb9257c239daaeeb6f725';
+	// private $api_key = '6bad9044fb6fdb33caac381cb5b5bc5c';
+	// private $api_key = '968af9512a7eb9257c239daaeeb6f725';
 	public function provinsi()
 	{
 
@@ -128,9 +128,9 @@ class Ongkir extends CI_Controller
 			print_r($array_response['data']);
 			echo '</pre>';
 			$data_kota = $array_response['data'];
-			echo '<option value="">--Pilih Kota--</option>';
+			echo '<option value="">--Pilih Kecamatan--</option>';
 			foreach ($data_kota as $key => $value) {
-				echo "<option value='" . $value['name'] . "'id_kec='" . $value['id'] . "'>" . $value['name'] . "</option>";
+				echo "<option value='" . $value['name'] . "'id_kecamatan='" . $value['id'] . "'>" . $value['name'] . "</option>";
 			}
 		}
 	}
@@ -184,11 +184,9 @@ class Ongkir extends CI_Controller
 	}
 	public function paket()
 	{
-		//mengambil id_kota
-		$id = $this->db->query("SELECT * FROM `pelanggan` WHERE id_pelanggan='" . $this->session->userdata('id_pelanggan') . "'")->row();
 		$id_kota_asal = 1224;
 		$expedisi = $this->input->post('expedisi');
-		$id_kecamatan = $id->kode_kec;
+		$id_kecamatan = $this->input->post('id_kecamatan');
 		// $id_desa = $this->input->post('id_desa');
 		$berat = $this->input->post('berat');
 		// die($id_kecamatan);

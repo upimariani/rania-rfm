@@ -1,36 +1,3 @@
-<!-- Hero Section Begin -->
-<section class="hero hero-normal">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="hero__categories">
-					<div class="hero__categories__all">
-						<i class="fa fa-bars"></i>
-						<span>Alat Olah Raga</span>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-9">
-				<div class="hero__search">
-
-					<div class="hero__search__phone">
-						<div class="hero__search__phone__icon">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="hero__search__phone__text">
-							<h5>+65 11.188.888</h5>
-							<span>support 24/7 time</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Hero Section End -->
-
-
 <!-- Shoping Cart Section Begin -->
 <section class="shoping-cart spad">
 	<div class="container">
@@ -58,6 +25,7 @@
 					<table id="myTable" class="table table-borderless">
 						<thead>
 							<tr>
+								<th scope="col">No</th>
 								<th scope="col">Tanggal Transaksi</th>
 								<th scope="col">Total Pembayaran</th>
 								<th scope="col">Status</th>
@@ -66,9 +34,11 @@
 						</thead>
 						<tbody>
 							<?php
+							$no = 1;
 							foreach ($pesanan_saya as $key => $value) {
 							?>
 								<tr>
+									<td><?= $no++ ?></td>
 									<td><?= $value->tgl_transaksi ?></td>
 									<td>Rp. <?= number_format($value->total_pembayaran) ?></td>
 									<td><?php if ($value->stat_transaksi == '0') {

@@ -1,39 +1,3 @@
-<!-- Hero Section Begin -->
-<section class="hero hero-normal">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="hero__categories">
-					<div class="hero__categories__all">
-						<i class="fa fa-bars"></i>
-						<span>Alat Olah Raga</span>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-9">
-				<div class="hero__search">
-
-					<div class="hero__search__phone">
-						<div class="hero__search__phone__icon">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="hero__search__phone__text">
-							<h5>+65 11.188.888</h5>
-							<span>support 24/7 time</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Hero Section End -->
-
-
-
-
-
 <!-- Contact Form Begin -->
 <div class="contact-form spad">
 	<div class="container">

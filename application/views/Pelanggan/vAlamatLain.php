@@ -1,3 +1,79 @@
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+	<div class="container">
+
+		<div class="checkout__form">
+			<h4>Billing Details</h4>
+			<form action="<?= base_url('Pelanggan/cCheckout/order_lain') ?>" method="POST">
+				<div class="row">
+					<div class="col-lg-8 col-md-6">
+						<div class="checkout__input">
+							<p>Provinsi<span>*</span></p>
+							<select name="provinsi" class="form-control" required>
+
+							</select>
+						</div>
+						<div class="checkout__input">
+							<p>Kota/Kab<span>*</span></p>
+							<select name="kota" class="form-control" required>
+
+							</select>
+						</div>
+						<div class="checkout__input">
+							<p>Kecamatan<span>*</span></p>
+							<select name="kecamatan" class="form-control" required>
+
+							</select>
+						</div>
+						<div class="checkout__input">
+							<p>Expedisi<span>*</span></p>
+							<select name="expedisi" class="form-control" required>
+
+							</select>
+						</div>
+						<div class="checkout__input">
+							<p>Paket<span>*</span></p>
+							<select name="paket" class="form-control" required>
+
+							</select>
+						</div>
+						<?php
+						$pelanggan = $this->db->query("SELECT * FROM `pelanggan` WHERE id_pelanggan='" . $this->session->userdata('id_pelanggan') . "'")->row();
+						?>
+						<div class="checkout__input">
+							<p>Alamat Lengkap<span>*</span></p>
+							<input type="text" name="alamat" placeholder="Masukkan alamat lengkap anda.">
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="checkout__order">
+							<h4>Orderan</h4>
+							<div class="checkout__order__products">Produk <span>Total</span></div>
+							<ul>
+								<?php
+								foreach ($this->cart->contents() as $key => $value) {
+								?>
+									<li><?= $value['name'] ?><span>Rp. <?= number_format($value['price'] * $value['qty']) ?></span></li>
+								<?php
+								}
+								?>
+
+							</ul>
+							<div class="checkout__order__subtotal">Subtotal <span>Rp. <?= number_format($this->cart->total()) ?></span></div>
+							<div class="checkout__order__subtotal">Ongkos Kirim <span id="ongkir"></span></div>
+							<div class="checkout__order__total">Total <span class="ttl_bayar"></span></div>
+							<input type="text" name="ongkir" hidden>
+							<input type="text" name="total_pembayaran" hidden>
+							<button type="submit" class="site-btn">ORDER</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<!-- Checkout Section End -->
+<!-- Footer Section Begin -->
 <!-- Footer Section Begin -->
 <footer class="footer spad">
 	<div class="container">
@@ -95,9 +171,9 @@
 	$(document).ready(function() {
 		$.ajax({
 			type: "POST",
-			url: "http://localhost/rania-rfm/Pelanggan/Ongkir/provinsi",
+			url: "http://localhost/rania-rfm/Pelanggan/Ongkirlain/provinsi",
 			success: function(hasil_provinsi) {
-				console.log(hasil_provinsi);
+				// console.log(hasil_provinsi);
 				$("select[name=provinsi]").html(hasil_provinsi);
 			}
 		});
@@ -105,7 +181,7 @@
 			var id_provinsi_terpilih = $("option:selected", this).attr("id_provinsi");
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/rania-rfm/Pelanggan/ongkir/kota",
+				url: "http://localhost/rania-rfm/Pelanggan/Ongkirlain/kota",
 				data: 'id_provinsi=' + id_provinsi_terpilih,
 				success: function(hasil_kota) {
 					$("select[name=kota]").html(hasil_kota);
@@ -116,53 +192,43 @@
 			var id_kota_terpilih = $("option:selected", this).attr("id_kota");
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/rania-rfm/Pelanggan/ongkir/kecamatan",
+				url: "http://localhost/rania-rfm/Pelanggan/Ongkirlain/kecamatan",
 				data: 'id_kota=' + id_kota_terpilih,
 				success: function(hasil_kecamatan) {
-					// console.log(hasil_kecamatan);
-					var kec = $("option:selected", this).attr('id_kec');
-					$("input[name=id_kec]").val(kec);
+					console.log(hasil_kecamatan);
 					$("select[name=kecamatan]").html(hasil_kecamatan);
 				}
 			});
 		});
 
 		$("select[name=kecamatan]").on("change", function() {
-			var kec = $("option:selected", this).attr('id_kec');
-			$("input[name=id_kec]").val(kec);
+			$.ajax({
+				type: "POST",
+				url: "http://localhost/rania-rfm/Pelanggan/Ongkirlain/expedisi",
+				success: function(hasil_expedisi) {
+					$("select[name=expedisi]").html(hasil_expedisi);
 
+				}
+			});
 		});
 
-
-
-	});
-</script>
-<script>
-	$(document).ready(function() {
-
-		$.ajax({
-			type: "POST",
-			url: "http://localhost/rania-rfm/Pelanggan/ongkir/expedisi",
-			success: function(hasil_expedisi) {
-				$("select[name=expedisi]").html(hasil_expedisi);
-			}
-		});
 
 		$("select[name=expedisi]").on("change", function() {
 			//mendapatkan expedisi terpilih
 			var expedisi_terpilih = $("select[name=expedisi]").val()
 
 			//mendapatkan id kota tujuan terpilih
-			// var id_kecamatan_tujuan_terpilih = $("option:selected", "select[name=kecamatan]").attr('id_kota');
+			var id_kecamatan_tujuan_terpilih = $("option:selected", "select[name=kecamatan]").attr('id_kecamatan');
 
 			//alert(total_berat);
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/rania-rfm/Pelanggan/ongkir/paket",
-				data: 'expedisi=' + expedisi_terpilih + '&berat=1',
+				url: "http://localhost/rania-rfm/Pelanggan/Ongkirlain/paket",
+				data: 'expedisi=' + expedisi_terpilih + '&id_kecamatan=' + id_kecamatan_tujuan_terpilih + '&berat=1',
 				success: function(hasil_paket) {
 					console.log(hasil_paket);
 					$("select[name=paket]").html(hasil_paket);
+					$("input[name=kec]").val(id_kecamatan_tujuan_terpilih);
 				}
 			});
 		});
@@ -175,12 +241,17 @@
 				ribuan_ongkir = reverse.match(/\d{1,3}/g);
 			ribuan_ongkir = ribuan_ongkir.join(',').split('').reverse().join('');
 			//alert(dataongkir);
-			$("#ongkir").html("Rp. " + ribuan_ongkir)
+			$("#ongkir").html("Rp. " + ribuan_ongkir);
+
+
 			//menghitung total bayar
 			var ongkir = $("option:selected", this).attr('ongkir');
 
 
+
+
 			var total_bayar = parseInt(ongkir) + parseInt(<?= $this->cart->total() ?>);
+
 			var reverse2 = total_bayar.toString().split('').reverse().join(''),
 				ribuan_total = reverse2.match(/\d{1,3}/g);
 			ribuan_total = ribuan_total.join(',').split('').reverse().join('');
@@ -195,6 +266,7 @@
 			$("input[name=total_pembayaran]").val(total_bayar);
 
 		});
+
 	});
 </script>
 

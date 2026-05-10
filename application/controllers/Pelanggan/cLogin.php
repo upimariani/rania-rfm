@@ -41,8 +41,26 @@ class cLogin extends CI_Controller
 	}
 	public function registrasi()
 	{
-		$this->form_validation->set_rules('nama', 'Nama Pelanggan', 'required');
-		$this->form_validation->set_rules('no_hp', 'Nomor Telepon', 'required');
+		$this->form_validation->set_rules(
+			'nama',
+			'Nama Pelanggan',
+			'required|regex_match[/^[a-zA-Z\s]+$/]',
+			array(
+				'required' => '%s wajib diisi!',
+				'regex_match' => '%s hanya boleh huruf dan spasi!'
+			)
+		);
+		$this->form_validation->set_rules(
+			'no_hp',
+			'Nomor Telepon',
+			'required|numeric|min_length[11]|max_length[13]',
+			array(
+				'required'   => '%s wajib diisi!',
+				'numeric'    => '%s hanya boleh angka!',
+				'min_length' => '%s minimal 11 digit!',
+				'max_length' => '%s maksimal 13 digit!'
+			)
+		);
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required');
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
@@ -52,13 +70,24 @@ class cLogin extends CI_Controller
 			$this->load->view('Pelanggan/vRegistrasi');
 			$this->load->view('Pelanggan/Layout/footer');
 		} else {
+			$provinsi = $this->input->post('provinsi');
+			$kota = $this->input->post('kota');
+			$kecamatan = $this->input->post('kecamatan');
+
+
+			$teks = $this->input->post('nama');
+
+			$hasil = strtoupper(preg_replace('/[aiueoAIUEO\s]/', '', $teks));
+
 			$data = array(
-				'nama_pelanggan' => $this->input->post('nama'),
-				'alamat' => $this->input->post('alamat'),
+				'id_pelanggan' => $hasil,
+				'nama_pelanggan' => $teks,
+				'alamat' => $this->input->post('alamat') . ' Kec.' . $kecamatan . ' Kota/Kab. ' . $kota . ' Prov. ' . $provinsi,
 				'no_hp' => $this->input->post('no_hp'),
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password'),
-				'level_member' => '1'
+				'level_member' => '1',
+				'kode_kec' => $this->input->post('id_kec')
 			);
 			$this->db->insert('pelanggan', $data);
 			$this->session->set_flashdata('success', 'Anda berhasil registrasi! Silahkan melakukan login!');

@@ -1,39 +1,3 @@
-<!-- Hero Section Begin -->
-<section class="hero hero-normal">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="hero__categories">
-					<div class="hero__categories__all">
-						<i class="fa fa-bars"></i>
-						<span>Alat Olah Raga</span>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-9">
-				<div class="hero__search">
-
-					<div class="hero__search__phone">
-						<div class="hero__search__phone__icon">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="hero__search__phone__text">
-							<h5>+65 11.188.888</h5>
-							<span>support 24/7 time</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Hero Section End -->
-
-
-
-
-
 <!-- Contact Form Begin -->
 <div class="contact-form spad">
 	<div class="container">
@@ -73,11 +37,32 @@
 					<?= form_error('no_hp', '<small class="text-danger">', '</small>') ?>
 					<input type="number" name="no_hp" placeholder="Nomor Telepon">
 				</div>
+				<hr>
+				<div class="col-lg-12 form-group">
+					<label class="form-label">Provinsi<sup class="text-danger">*</sup></label>
+					<select name="provinsi" class="form-control">
+
+					</select>
+				</div>
+				<div class="col-lg-12 form-group">
+					<label class="form-label">Kota/Kabupaten<sup class="text-danger">*</sup></label>
+					<select name="kota" class="form-control">
+
+					</select>
+				</div>
+				<div class="col-lg-12 form-group">
+					<label class="form-label">Kecamatan<sup class="text-danger">*</sup></label>
+					<select name="kecamatan" class="form-control">
+
+					</select>
+				</div>
+				<input type="text" name="id_kec" hidden>
 				<div class="col-lg-12 col-md-12">
 					<?= form_error('alamat', '<small class="text-danger">', '</small>') ?>
+					<label class="form-label">Alamat Lengkap<sup class="text-danger">*</sup></label>
 					<input type="text" name="alamat" placeholder="Alamat">
 				</div>
-
+				<hr>
 				<div class="col-lg-6 col-md-6">
 					<?= form_error('username', '<small class="text-danger">', '</small>') ?>
 					<input type="text" name="username" placeholder="Username">
@@ -89,7 +74,7 @@
 				</div>
 				<div class="col-lg-12 text-center">
 
-					<button type="submit" class="site-btn">REGIST</button>
+					<button type="submit" class="site-btn">REGISTRASI</button>
 				</div>
 			</div>
 		</form>

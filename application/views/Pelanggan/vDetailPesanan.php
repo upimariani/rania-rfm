@@ -1,37 +1,3 @@
-<!-- Hero Section Begin -->
-<section class="hero hero-normal">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="hero__categories">
-					<div class="hero__categories__all">
-						<i class="fa fa-bars"></i>
-						<span>Alat Olah Raga</span>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-9">
-				<div class="hero__search">
-
-					<div class="hero__search__phone">
-						<div class="hero__search__phone__icon">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="hero__search__phone__text">
-							<h5>+65 11.188.888</h5>
-							<span>support 24/7 time</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Hero Section End -->
-
-
-
 <!-- Shoping Cart Section Begin -->
 <section class="shoping-cart spad">
 	<div class="container">
@@ -59,7 +25,7 @@
 					<div class="container">
 						<div class="card">
 							<div class="card-header">
-								Invoice
+								Detail Pesanan
 								<strong><?= $pesanan_saya->tgl_transaksi ?></strong>
 								<span class="float-right"> <strong>Status:</strong> <?php
 																					if ($pesanan_saya->stat_transaksi == '0') {
@@ -75,7 +41,7 @@
 							<div class="card-body">
 								<div class="row mb-4">
 									<div class="col-sm-6">
-										<h6 class="mb-3">To:</h6>
+										<h6 class="mb-3">Untuk:</h6>
 										<div>
 											<strong><?= $pesanan_saya->nama_pelanggan ?></strong>
 										</div>
@@ -92,10 +58,10 @@
 											?>
 											<h6 class="mb-3">Pembayaran:</h6>
 											<div>
-												<strong>Upload Bukti Pembayaran</strong>
+												<strong>Unggah Bukti Pembayaran</strong>
 											</div>
 											<input type="file" name="gambar" class="form-control mb-3">
-											<button type="submit" class="site-btn">Upload</button>
+											<button type="submit" class="site-btn">Unggah</button>
 										</div>
 									<?php
 									} else {
@@ -119,9 +85,9 @@
 									<table class="table table-striped">
 										<thead>
 											<tr>
-												<th scope="col" colspan="2">Product</th>
+												<th scope="col" colspan="2">Produk</th>
 												<th scope="col">Harga</th>
-												<th scope="col">Quantity</th>
+												<th scope="col">Jumlah</th>
 												<th scope="col">Total</th>
 											</tr>
 										</thead>

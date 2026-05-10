@@ -11,12 +11,12 @@
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Css Styles -->
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/font-awesome.min.css" type="text/css">
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/elegant-icons.css" type="text/css">
-	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/nice-select.css" type="text/css">
+	<!-- <link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/nice-select.css" type="text/css"> -->
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/jquery-ui.min.css" type="text/css">
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/owl.carousel.min.css" type="text/css">
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/slicknav.min.css" type="text/css">
@@ -43,17 +43,22 @@
 									$lm = $dt_pelanggan->level_member;
 									if ($lm == '1') {
 										$lvm = 'Lost Customer';
+										$dis = '0';
 									} else if ($lm == '2') {
 										$lvm = 'At Risk Customer';
+										$dis = '2';
 									} else if ($lm == '3') {
 										$lvm = 'Potensial Customer';
+										$dis = '4';
 									} else if ($lm == '4') {
 										$lvm = 'Loyal Customer';
+										$dis = '5';
 									} else if ($lm == '5') {
 										$lvm = 'Champion Customer';
+										$dis = '7';
 									} ?>
 									<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-									<li>Selamat Datang, <strong><?= $dt_pelanggan->nama_pelanggan ?></strong> Level Member Anda <strong><?= $lvm ?></strong></li>
+									<li>Selamat Datang, <strong><?= $dt_pelanggan->nama_pelanggan ?></strong> Level Member Anda <strong><?= $lvm ?></strong> Diskon Produk sebesar <strong><?= $dis ?>%</strong></li>
 								<?php
 								}
 
@@ -153,3 +158,34 @@
 		</div>
 	</header>
 	<!-- Header Section End -->
+	<!-- Hero Section Begin -->
+	<section class="hero hero-normal">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="hero__categories">
+						<div class="hero__categories__all">
+							<i class="fa fa-bars"></i>
+							<span>Alat Olah Raga</span>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<div class="hero__search">
+
+						<div class="hero__search__phone">
+							<div class="hero__search__phone__icon">
+								<i class="fa fa-phone"></i>
+							</div>
+							<div class="hero__search__phone__text">
+								<h5>+65 11.188.888</h5>
+								<span>layanan 24/7 jam</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero Section End -->

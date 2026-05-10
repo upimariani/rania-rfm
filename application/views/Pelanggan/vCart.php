@@ -1,37 +1,3 @@
-<!-- Hero Section Begin -->
-<section class="hero hero-normal">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="hero__categories">
-					<div class="hero__categories__all">
-						<i class="fa fa-bars"></i>
-						<span>Alat Olah Raga</span>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-9">
-				<div class="hero__search">
-
-					<div class="hero__search__phone">
-						<div class="hero__search__phone__icon">
-							<i class="fa fa-phone"></i>
-						</div>
-						<div class="hero__search__phone__text">
-							<h5>+65 11.188.888</h5>
-							<span>support 24/7 time</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Hero Section End -->
-
-
-
 <!-- Shoping Cart Section Begin -->
 <section class="shoping-cart spad">
 	<div class="container">
@@ -60,10 +26,10 @@
 						<thead>
 							<tr>
 								<th scope="col">Produk</th>
-								<th scope="col">Price</th>
-								<th scope="col">Quantity</th>
+								<th scope="col">Harga</th>
+								<th scope="col">Jumlah</th>
 								<th scope="col">Total</th>
-								<th scope="col">Handle</th>
+								<th scope="col">Hapus</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -106,21 +72,21 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="shoping__cart__btns">
-					<a href="<?= base_url('Pelanggan/cKatalog') ?>" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+					<a href="<?= base_url('Pelanggan/cKatalog') ?>" class="primary-btn cart-btn">LANJUT BELANJA</a>
 					<button type="submit" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-						Update Cart</button>
+						PERBAHARUI KERANJANG</button>
 				</div>
 			</div>
 			</form>
 
 			<div class="col-lg-6">
 				<div class="shoping__checkout">
-					<h5>Cart Total</h5>
+					<h5>Total Keranjang</h5>
 					<ul>
 						<li>Subtotal <span>Rp. <?= number_format($this->cart->total()) ?></span></li>
 						<li>Total <span>Rp. <?= number_format($this->cart->total()) ?></span></li>
 					</ul>
-					<a href="<?= base_url('Pelanggan/cCheckout') ?>" class="primary-btn">PROCEED TO CHECKOUT</a>
+					<a href="<?= base_url('Pelanggan/cCheckout') ?>" class="primary-btn">PROSES CHECKOUT</a>
 				</div>
 			</div>
 		</div>

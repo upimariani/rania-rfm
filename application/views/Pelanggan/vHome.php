@@ -12,7 +12,7 @@
 						<span>ALAT OLAHRAGA</span>
 						<h2 class="text-light">RANIA <br />SPORT</h2>
 						<p class="text-light">Kuningan</p>
-						<a href="<?= base_url('Pelanggan/cKatalog') ?>" class="primary-btn">SHOP NOW</a>
+						<a href="<?= base_url('Pelanggan/cKatalog') ?>" class="primary-btn">BELANJA SEKARANG</a>
 					</div>
 				</div>
 			</div>
