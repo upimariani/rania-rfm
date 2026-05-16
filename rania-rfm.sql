@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2026 at 08:33 PM
+-- Generation Time: May 10, 2026 at 08:35 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -316,65 +316,64 @@ CREATE TABLE `pelanggan` (
   `frequency` int(11) NOT NULL,
   `monetary` int(11) NOT NULL,
   `level_member` int(11) NOT NULL,
-  `kode_kec` int(11) NOT NULL,
-  `t_id` int(11) NOT NULL
+  `kode_kec` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_hp`, `username`, `password`, `recency`, `frequency`, `monetary`, `level_member`, `kode_kec`, `t_id`) VALUES
-('PLNGGN1', 'Pelanggan1', 'Kuningan', '08877210604', 'Pelanggan1', 'Pelanggan1', 0, 0, 0, 1, 1224, 27),
-('PLNGGN10', 'Pelanggan10', 'Kuningan', '08836798228', 'Pelanggan10', 'Pelanggan10', 0, 0, 0, 1, 1224, 36),
-('PLNGGN11', 'Pelanggan11', 'Kuningan', '08112345341', 'Pelanggan11', 'Pelanggan11', 0, 0, 0, 1, 1224, 37),
-('PLNGGN12', 'Pelanggan12', 'Kuningan', '08910645142', 'Pelanggan12', 'Pelanggan12', 0, 0, 0, 1, 1224, 38),
-('PLNGGN13', 'Pelanggan13', 'Kuningan', '08869319256', 'Pelanggan13', 'Pelanggan13', 0, 0, 0, 1, 1224, 39),
-('PLNGGN14', 'Pelanggan14', 'Kuningan', '08252741767', 'Pelanggan14', 'Pelanggan14', 0, 0, 0, 1, 1224, 40),
-('PLNGGN15', 'Pelanggan15', 'Kuningan', '08969539498', 'Pelanggan15', 'Pelanggan15', 0, 0, 0, 1, 1224, 41),
-('PLNGGN16', 'Pelanggan16', 'Kuningan', '08947864692', 'Pelanggan16', 'Pelanggan16', 0, 0, 0, 1, 1224, 42),
-('PLNGGN17', 'Pelanggan17', 'Kuningan', '08662975737', 'Pelanggan17', 'Pelanggan17', 0, 0, 0, 1, 1224, 43),
-('PLNGGN18', 'Pelanggan18', 'Kuningan', '08556762697', 'Pelanggan18', 'Pelanggan18', 0, 0, 0, 1, 1224, 44),
-('PLNGGN19', 'Pelanggan19', 'Kuningan', '08351827584', 'Pelanggan19', 'Pelanggan19', 0, 0, 0, 1, 1224, 45),
-('PLNGGN2', 'Pelanggan2', 'Kuningan', '08503896630', 'Pelanggan2', 'Pelanggan2', 0, 0, 0, 1, 1224, 28),
-('PLNGGN20', 'Pelanggan20', 'Kuningan', '08823868441', 'Pelanggan20', 'Pelanggan20', 0, 0, 0, 1, 1224, 46),
-('PLNGGN21', 'Pelanggan21', 'Kuningan', '08283896435', 'Pelanggan21', 'Pelanggan21', 0, 0, 0, 1, 1224, 47),
-('PLNGGN22', 'Pelanggan22', 'Kuningan', '08159626983', 'Pelanggan22', 'Pelanggan22', 0, 0, 0, 1, 1224, 48),
-('PLNGGN23', 'Pelanggan23', 'Kuningan', '08802450915', 'Pelanggan23', 'Pelanggan23', 0, 0, 0, 1, 1224, 49),
-('PLNGGN24', 'Pelanggan24', 'Kuningan', '08667429794', 'Pelanggan24', 'Pelanggan24', 0, 0, 0, 1, 1224, 50),
-('PLNGGN3', 'Pelanggan3', 'Kuningan', '08536640220', 'Pelanggan3', 'Pelanggan3', 0, 0, 0, 1, 1224, 29),
-('PLNGGN4', 'Pelanggan4', 'Kuningan', '08498533914', 'Pelanggan4', 'Pelanggan4', 0, 0, 0, 1, 1224, 30),
-('PLNGGN5', 'Pelanggan5', 'Kuningan', '08582181081', 'Pelanggan5', 'Pelanggan5', 0, 0, 0, 1, 1224, 31),
-('PLNGGN6', 'Pelanggan6', 'Kuningan', '08900779499', 'Pelanggan6', 'Pelanggan6', 0, 0, 0, 1, 1224, 32),
-('PLNGGN7', 'Pelanggan7', 'Kuningan', '08415006095', 'Pelanggan7', 'Pelanggan7', 0, 0, 0, 1, 1224, 33),
-('PLNGGN8', 'Pelanggan8', 'Kuningan', '08353244367', 'Pelanggan8', 'Pelanggan8', 0, 0, 0, 1, 1224, 34),
-('PLNGGN9', 'Pelanggan9', 'Kuningan', '08162497428', 'Pelanggan9', 'Pelanggan9', 0, 0, 0, 1, 1224, 35),
-('PLNGGNA', 'PelangganA', 'Kuningan', '08376097132', 'PelangganA', 'PelangganA', 0, 0, 0, 1, 1224, 1),
-('PLNGGNB', 'PelangganB', 'Kuningan', '08314609737', 'PelangganB', 'PelangganB', 0, 0, 0, 1, 1224, 2),
-('PLNGGNC', 'PelangganC', 'Kuningan', '08383070632', 'PelangganC', 'PelangganC', 0, 0, 0, 1, 1224, 3),
-('PLNGGND', 'PelangganD', 'Kuningan', '08979001779', 'PelangganD', 'PelangganD', 0, 0, 0, 1, 1224, 4),
-('PLNGGNE', 'PelangganE', 'Kuningan', '08555763075', 'PelangganE', 'PelangganE', 0, 0, 0, 1, 1224, 5),
-('PLNGGNF', 'PelangganF', 'Kuningan', '08851763512', 'PelangganF', 'PelangganF', 0, 0, 0, 1, 1224, 6),
-('PLNGGNG', 'PelangganG', 'Kuningan', '08714843972', 'PelangganG', 'PelangganG', 0, 0, 0, 1, 1224, 7),
-('PLNGGNH', 'PelangganH', 'Kuningan', '08554573612', 'PelangganH', 'PelangganH', 0, 0, 0, 1, 1224, 8),
-('PLNGGNI', 'PelangganI', 'Kuningan', '08182243840', 'PelangganI', 'PelangganI', 0, 0, 0, 1, 1224, 9),
-('PLNGGNJ', 'PelangganJ', 'Kuningan', '08191728508', 'PelangganJ', 'PelangganJ', 0, 0, 0, 1, 1224, 10),
-('PLNGGNK', 'PelangganK', 'Kuningan', '08166632975', 'PelangganK', 'PelangganK', 0, 0, 0, 1, 1224, 11),
-('PLNGGNL', 'PelangganL', 'Kuningan', '08155697106', 'PelangganL', 'PelangganL', 0, 0, 0, 1, 1224, 12),
-('PLNGGNM', 'PelangganM', 'Kuningan', '08419468776', 'PelangganM', 'PelangganM', 0, 0, 0, 1, 1224, 13),
-('PLNGGNN', 'PelangganN', 'Kuningan', '08699341348', 'PelangganN', 'PelangganN', 0, 0, 0, 1, 1224, 14),
-('PLNGGNO', 'PelangganO', 'Kuningan', '08850473709', 'PelangganO', 'PelangganO', 0, 0, 0, 1, 1224, 15),
-('PLNGGNP', 'PelangganP', 'Kuningan', '08128363161', 'PelangganP', 'PelangganP', 0, 0, 0, 1, 1224, 16),
-('PLNGGNQ', 'PelangganQ', 'Kuningan', '08968401902', 'PelangganQ', 'PelangganQ', 0, 0, 0, 1, 1224, 17),
-('PLNGGNR', 'PelangganR', 'Kuningan', '08956681396', 'PelangganR', 'PelangganR', 0, 0, 0, 1, 1224, 18),
-('PLNGGNS', 'PelangganS', 'Kuningan', '08665795935', 'PelangganS', 'PelangganS', 0, 0, 0, 1, 1224, 19),
-('PLNGGNT', 'PelangganT', 'Kuningan', '08771484001', 'PelangganT', 'PelangganT', 0, 0, 0, 1, 1224, 20),
-('PLNGGNU', 'PelangganU', 'Kuningan', '08155158165', 'PelangganU', 'PelangganU', 0, 0, 0, 1, 1224, 21),
-('PLNGGNV', 'PelangganV', 'Kuningan', '08479795291', 'PelangganV', 'PelangganV', 0, 0, 0, 1, 1224, 22),
-('PLNGGNW', 'PelangganW', 'Kuningan', '08743662817', 'PelangganW', 'PelangganW', 0, 0, 0, 1, 1224, 23),
-('PLNGGNX', 'PelangganX', 'Kuningan', '08822832465', 'PelangganX', 'PelangganX', 0, 0, 0, 1, 1224, 24),
-('PLNGGNY', 'PelangganY', 'Kuningan', '08144650255', 'PelangganY', 'PelangganY', 0, 0, 0, 1, 1224, 25),
-('PLNGGNZ', 'PelangganZ', 'Kuningan', '08213515465', 'PelangganZ', 'PelangganZ', 0, 0, 0, 1, 1224, 26);
+INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `no_hp`, `username`, `password`, `recency`, `frequency`, `monetary`, `level_member`, `kode_kec`) VALUES
+('PLNGGN1', 'Pelanggan1', 'Kuningan', '08877210604', 'Pelanggan1', 'Pelanggan1', 0, 0, 0, 1, 1224),
+('PLNGGN10', 'Pelanggan10', 'Kuningan', '08836798228', 'Pelanggan10', 'Pelanggan10', 0, 0, 0, 1, 1224),
+('PLNGGN11', 'Pelanggan11', 'Kuningan', '08112345341', 'Pelanggan11', 'Pelanggan11', 0, 0, 0, 1, 1224),
+('PLNGGN12', 'Pelanggan12', 'Kuningan', '08910645142', 'Pelanggan12', 'Pelanggan12', 0, 0, 0, 1, 1224),
+('PLNGGN13', 'Pelanggan13', 'Kuningan', '08869319256', 'Pelanggan13', 'Pelanggan13', 0, 0, 0, 1, 1224),
+('PLNGGN14', 'Pelanggan14', 'Kuningan', '08252741767', 'Pelanggan14', 'Pelanggan14', 0, 0, 0, 1, 1224),
+('PLNGGN15', 'Pelanggan15', 'Kuningan', '08969539498', 'Pelanggan15', 'Pelanggan15', 0, 0, 0, 1, 1224),
+('PLNGGN16', 'Pelanggan16', 'Kuningan', '08947864692', 'Pelanggan16', 'Pelanggan16', 0, 0, 0, 1, 1224),
+('PLNGGN17', 'Pelanggan17', 'Kuningan', '08662975737', 'Pelanggan17', 'Pelanggan17', 0, 0, 0, 1, 1224),
+('PLNGGN18', 'Pelanggan18', 'Kuningan', '08556762697', 'Pelanggan18', 'Pelanggan18', 0, 0, 0, 1, 1224),
+('PLNGGN19', 'Pelanggan19', 'Kuningan', '08351827584', 'Pelanggan19', 'Pelanggan19', 0, 0, 0, 1, 1224),
+('PLNGGN2', 'Pelanggan2', 'Kuningan', '08503896630', 'Pelanggan2', 'Pelanggan2', 0, 0, 0, 1, 1224),
+('PLNGGN20', 'Pelanggan20', 'Kuningan', '08823868441', 'Pelanggan20', 'Pelanggan20', 0, 0, 0, 1, 1224),
+('PLNGGN21', 'Pelanggan21', 'Kuningan', '08283896435', 'Pelanggan21', 'Pelanggan21', 0, 0, 0, 1, 1224),
+('PLNGGN22', 'Pelanggan22', 'Kuningan', '08159626983', 'Pelanggan22', 'Pelanggan22', 0, 0, 0, 1, 1224),
+('PLNGGN23', 'Pelanggan23', 'Kuningan', '08802450915', 'Pelanggan23', 'Pelanggan23', 0, 0, 0, 1, 1224),
+('PLNGGN24', 'Pelanggan24', 'Kuningan', '08667429794', 'Pelanggan24', 'Pelanggan24', 0, 0, 0, 1, 1224),
+('PLNGGN3', 'Pelanggan3', 'Kuningan', '08536640220', 'Pelanggan3', 'Pelanggan3', 0, 0, 0, 1, 1224),
+('PLNGGN4', 'Pelanggan4', 'Kuningan', '08498533914', 'Pelanggan4', 'Pelanggan4', 0, 0, 0, 1, 1224),
+('PLNGGN5', 'Pelanggan5', 'Kuningan', '08582181081', 'Pelanggan5', 'Pelanggan5', 0, 0, 0, 1, 1224),
+('PLNGGN6', 'Pelanggan6', 'Kuningan', '08900779499', 'Pelanggan6', 'Pelanggan6', 0, 0, 0, 1, 1224),
+('PLNGGN7', 'Pelanggan7', 'Kuningan', '08415006095', 'Pelanggan7', 'Pelanggan7', 0, 0, 0, 1, 1224),
+('PLNGGN8', 'Pelanggan8', 'Kuningan', '08353244367', 'Pelanggan8', 'Pelanggan8', 0, 0, 0, 1, 1224),
+('PLNGGN9', 'Pelanggan9', 'Kuningan', '08162497428', 'Pelanggan9', 'Pelanggan9', 0, 0, 0, 1, 1224),
+('PLNGGNA', 'PelangganA', 'Kuningan', '08376097132', 'PelangganA', 'PelangganA', 0, 0, 0, 1, 1224),
+('PLNGGNB', 'PelangganB', 'Kuningan', '08314609737', 'PelangganB', 'PelangganB', 0, 0, 0, 1, 1224),
+('PLNGGNC', 'PelangganC', 'Kuningan', '08383070632', 'PelangganC', 'PelangganC', 0, 0, 0, 1, 1224),
+('PLNGGND', 'PelangganD', 'Kuningan', '08979001779', 'PelangganD', 'PelangganD', 0, 0, 0, 1, 1224),
+('PLNGGNE', 'PelangganE', 'Kuningan', '08555763075', 'PelangganE', 'PelangganE', 0, 0, 0, 1, 1224),
+('PLNGGNF', 'PelangganF', 'Kuningan', '08851763512', 'PelangganF', 'PelangganF', 0, 0, 0, 1, 1224),
+('PLNGGNG', 'PelangganG', 'Kuningan', '08714843972', 'PelangganG', 'PelangganG', 0, 0, 0, 1, 1224),
+('PLNGGNH', 'PelangganH', 'Kuningan', '08554573612', 'PelangganH', 'PelangganH', 0, 0, 0, 1, 1224),
+('PLNGGNI', 'PelangganI', 'Kuningan', '08182243840', 'PelangganI', 'PelangganI', 0, 0, 0, 1, 1224),
+('PLNGGNJ', 'PelangganJ', 'Kuningan', '08191728508', 'PelangganJ', 'PelangganJ', 0, 0, 0, 1, 1224),
+('PLNGGNK', 'PelangganK', 'Kuningan', '08166632975', 'PelangganK', 'PelangganK', 0, 0, 0, 1, 1224),
+('PLNGGNL', 'PelangganL', 'Kuningan', '08155697106', 'PelangganL', 'PelangganL', 0, 0, 0, 1, 1224),
+('PLNGGNM', 'PelangganM', 'Kuningan', '08419468776', 'PelangganM', 'PelangganM', 0, 0, 0, 1, 1224),
+('PLNGGNN', 'PelangganN', 'Kuningan', '08699341348', 'PelangganN', 'PelangganN', 0, 0, 0, 1, 1224),
+('PLNGGNO', 'PelangganO', 'Kuningan', '08850473709', 'PelangganO', 'PelangganO', 0, 0, 0, 1, 1224),
+('PLNGGNP', 'PelangganP', 'Kuningan', '08128363161', 'PelangganP', 'PelangganP', 0, 0, 0, 1, 1224),
+('PLNGGNQ', 'PelangganQ', 'Kuningan', '08968401902', 'PelangganQ', 'PelangganQ', 0, 0, 0, 1, 1224),
+('PLNGGNR', 'PelangganR', 'Kuningan', '08956681396', 'PelangganR', 'PelangganR', 0, 0, 0, 1, 1224),
+('PLNGGNS', 'PelangganS', 'Kuningan', '08665795935', 'PelangganS', 'PelangganS', 0, 0, 0, 1, 1224),
+('PLNGGNT', 'PelangganT', 'Kuningan', '08771484001', 'PelangganT', 'PelangganT', 0, 0, 0, 1, 1224),
+('PLNGGNU', 'PelangganU', 'Kuningan', '08155158165', 'PelangganU', 'PelangganU', 0, 0, 0, 1, 1224),
+('PLNGGNV', 'PelangganV', 'Kuningan', '08479795291', 'PelangganV', 'PelangganV', 0, 0, 0, 1, 1224),
+('PLNGGNW', 'PelangganW', 'Kuningan', '08743662817', 'PelangganW', 'PelangganW', 0, 0, 0, 1, 1224),
+('PLNGGNX', 'PelangganX', 'Kuningan', '08822832465', 'PelangganX', 'PelangganX', 0, 0, 0, 1, 1224),
+('PLNGGNY', 'PelangganY', 'Kuningan', '08144650255', 'PelangganY', 'PelangganY', 0, 0, 0, 1, 1224),
+('PLNGGNZ', 'PelangganZ', 'Kuningan', '08213515465', 'PelangganZ', 'PelangganZ', 0, 0, 0, 1, 1224);
 
 -- --------------------------------------------------------
 

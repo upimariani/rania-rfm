@@ -75,6 +75,8 @@
 													echo 'Loyal Customer';
 												} else if ($value->level_member == '5') {
 													echo 'Champion';
+												} else if ($value->level_member == '0') {
+													echo 'New Customer';
 												} ?></td>
 										</tr>
 									<?php

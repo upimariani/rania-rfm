@@ -56,6 +56,9 @@
 									} else if ($lm == '5') {
 										$lvm = 'Champion Customer';
 										$dis = '7';
+									} else if ($lm == '0') {
+										$lvm = 'New Customer';
+										$dis = '0';
 									} ?>
 									<li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
 									<li>Selamat Datang, <strong><?= $dt_pelanggan->nama_pelanggan ?></strong> Level Member Anda <strong><?= $lvm ?></strong> Diskon Produk sebesar <strong><?= $dis ?>%</strong></li>

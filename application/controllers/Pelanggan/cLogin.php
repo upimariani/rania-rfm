@@ -86,7 +86,7 @@ class cLogin extends CI_Controller
 				'no_hp' => $this->input->post('no_hp'),
 				'username' => $this->input->post('username'),
 				'password' => $this->input->post('password'),
-				'level_member' => '1',
+				'level_member' => '0',
 				'kode_kec' => $this->input->post('id_kec')
 			);
 			$this->db->insert('pelanggan', $data);

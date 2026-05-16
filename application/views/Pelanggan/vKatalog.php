@@ -16,12 +16,13 @@
 			<div class="col-lg-3 col-md-5">
 				<div class="sidebar">
 					<div class="sidebar__item">
-						<h4>Produk</h4>
+						<h4>Kategori Produk</h4>
 						<ul>
 							<?php
-							foreach ($produk as $key => $value) {
+							$kategori = $this->db->query("SELECT * FROM `produk` GROUP BY kategori_produk")->result();
+							foreach ($kategori as $key => $value) {
 							?>
-								<li><a href="#"><?= $value->nama_produk ?></a></li>
+								<li><a href="<?= base_url('Pelanggan/cKatalog/kategori/' . str_replace(' ', '-', $value->kategori_produk)) ?>"><?= $value->kategori_produk ?></a></li>
 							<?php
 							}
 							?>
@@ -50,6 +51,8 @@
 							$disc = 5;
 						} else if ($lm == '5') {
 							$disc = 7;
+						} else if ($lm == '0') {
+							$disc = '0';
 						}
 
 						$harga = $value->harga - (($disc / 100) * $value->harga);
@@ -74,8 +77,9 @@
 								</div>
 								<div class="product__item__text">
 									<h6><a href="#"><?= $value->nama_produk ?></a></h6>
+									<small>Kategori: <?= $value->kategori_produk ?></small>
 									<?php
-									if ($lm != '1') {
+									if ($disc != '0') {
 									?>
 										<h5>Rp. <?= number_format($harga) ?> <del> Rp. <?= number_format($value->harga)  ?></del></h5>
 									<?php

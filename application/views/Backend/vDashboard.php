@@ -23,8 +23,18 @@
 			$p3 = $this->db->query("SELECT COUNT(id_pelanggan) as jml FROM `pelanggan` WHERE level_member='3'")->row();
 			$p4 = $this->db->query("SELECT COUNT(id_pelanggan) as jml FROM `pelanggan` WHERE level_member='4'")->row();
 			$p5 = $this->db->query("SELECT COUNT(id_pelanggan) as jml FROM `pelanggan` WHERE level_member='5'")->row();
+			$p6 = $this->db->query("SELECT COUNT(id_pelanggan) as jml FROM `pelanggan` WHERE level_member='0'")->row();
 			?>
 			<!-- [ sample-page ] start -->
+			<div class="col-md-6 col-xl-2">
+				<div class="card">
+					<div class="card-body">
+						<h6 class="mb-2 f-w-400 text-muted">New Customer</h6>
+						<h4 class="mb-3"><?= $p6->jml ?> <span class="badge bg-light-danger border border-danger"><i class="ti ti-trending-up"></i> Pelanggan</span></h4>
+
+					</div>
+				</div>
+			</div>
 			<div class="col-md-6 col-xl-2">
 				<div class="card">
 					<div class="card-body">
