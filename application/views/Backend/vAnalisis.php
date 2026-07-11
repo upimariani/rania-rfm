@@ -22,6 +22,7 @@
 			<div class="col-md-12 col-xl-12">
 				<h5 class="mb-3">Informasi Level Member Pelanggan</h5>
 				<!-- Button trigger modal -->
+				<a href="<?= base_url('Backend/cAnalisis/periode') ?>" class="btn btn-warning mb-2">Lihat Per Periode</a>
 				<?php
 				if ($this->session->userdata('id_user') == '2') {
 				?>

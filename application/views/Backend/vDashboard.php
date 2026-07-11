@@ -80,5 +80,31 @@
 				</div>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-lg-8">
+				<table id="myTable" class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Nama Pelanggan</th>
+							<th>Email</th>
+							<th width="120">Aksi</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach ($pelanggan as $p) { ?>
+							<tr>
+								<td><?= $p->id_pelanggan ?></td>
+								<td><?= $p->nama_pelanggan ?></td>
+								<td>
+									<a href="<?= base_url('Backend/cChat/detail/' . $p->id_pelanggan) ?>" class="btn btn-success btn-sm">
+										<i class="bi bi-chat-dots-fill"></i> Message
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>

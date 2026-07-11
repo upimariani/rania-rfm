@@ -11,7 +11,7 @@
 	<meta name="description" content="Mantis is made using Bootstrap 5 design framework. Download the free admin template & use it for your project.">
 	<meta name="keywords" content="Mantis, Dashboard UI Kit, Bootstrap 5, Admin Template, Admin Dashboard, CRM, CMS, Bootstrap Admin Template">
 	<meta name="author" content="CodedThemes">
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<!-- [Favicon] icon -->
 	<link rel="icon" href="<?= base_url('asset/Mantis-Bootstrap-1.0.0/dist/') ?>assets/images/favicon.svg" type="image/x-icon"> <!-- [Google Font] Family -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" id="main-font-link">

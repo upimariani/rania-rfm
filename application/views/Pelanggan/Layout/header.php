@@ -21,6 +21,90 @@
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/owl.carousel.min.css" type="text/css">
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/slicknav.min.css" type="text/css">
 	<link rel="stylesheet" href="<?= base_url('asset/ogani-master/') ?>css/style.css" type="text/css">
+	<style>
+		.chat-card {
+			max-width: 900px;
+			margin: 30px auto;
+			border-radius: 15px;
+			overflow: hidden;
+		}
+
+		.chat-header {
+			background: #7fad39;
+			color: #fff;
+			padding: 15px;
+		}
+
+		.chat-body {
+			height: 500px;
+			overflow-y: auto;
+			background: #e9ecef;
+			padding: 20px;
+		}
+
+		.message {
+			display: flex;
+			margin-bottom: 15px;
+		}
+
+		.message.customer {
+			justify-content: flex-end;
+		}
+
+		.bubble {
+			display: inline-block;
+			max-width: 70%;
+			min-width: 120px;
+			padding: 12px 16px;
+			border-radius: 15px;
+			word-break: break-word;
+			white-space: normal;
+		}
+
+		.admin .bubble {
+			background: #fff;
+			border: 1px solid #ddd;
+		}
+
+		.customer .bubble {
+			background: #b4b350;
+			color: #fff;
+		}
+
+		.time {
+			font-size: 12px;
+			color: #888;
+			margin-top: 5px;
+		}
+
+		.chat-footer {
+			background: #fff;
+			padding: 15px;
+			border-top: 1px solid #ddd;
+		}
+
+		textarea {
+			resize: none;
+		}
+
+		.avatar {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background: #198754;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+			margin-right: 10px;
+		}
+
+		.customer .avatar {
+			display: none;
+		}
+	</style>
+
 </head>
 
 <body>
@@ -122,6 +206,9 @@
 								<li <?php if ($this->uri->segment(1) == 'Pelanggan' && $this->uri->segment(2) == 'cPesananSaya') {
 										echo 'class="active"';
 									}  ?>><a href="<?= base_url('Pelanggan/cPesananSaya') ?>">Pesanan Saya</a></li>
+								<li <?php if ($this->uri->segment(1) == 'Pelanggan' && $this->uri->segment(2) == 'cChat') {
+										echo 'class="active"';
+									}  ?>><a href="<?= base_url('Pelanggan/cChat') ?>">Chat</a></li>
 							<?php
 							}
 							?>

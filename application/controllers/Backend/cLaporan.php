@@ -17,8 +17,7 @@ class cLaporan extends CI_Controller
 		// $pdf->Image('asset/logo-badai.png', 10, 3, 28);
 		$pdf->Cell(200, 5, 'RANIA SPORT KUNINGAN', 0, 1, 'C');
 		$pdf->SetFont('Times', '', 10);
-		$pdf->Cell(200, 20, 'Jalan Raya Ciniru–
-Kadugede No.106, Desa Babatan, Kecamatan Kadugede, Kabupaten
+		$pdf->Cell(200, 20, 'Jalan Raya Ciniru - Kadugede No.106, Desa Babatan, Kecamatan Kadugede, Kabupaten
 Kuningan, Jawa Barat', 0, 0, 'C');
 
 		$pdf->SetLineWidth(1);
@@ -45,13 +44,13 @@ Kuningan, Jawa Barat', 0, 0, 'C');
 
 		// $bulan = $this->input->post('bulan');
 		// $tahun = $this->input->post('tahun');
-		$data = $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan WHERE stat_transaksi='2'")->result();
+		$data = $this->db->query("SELECT * FROM `transaksi` JOIN pelanggan ON transaksi.id_pelanggan=pelanggan.id_pelanggan WHERE stat_transaksi='2' ORDER BY tgl_transaksi ASC")->result();
 
 		$no = 1;
 		foreach ($data as $key => $value) {
 			$pdf->Cell(20, 7, $no++, 1, 0, 'R');
 			$pdf->Cell(40, 7, $value->tgl_transaksi, 1, 0);
-			$pdf->Cell(70, 7, $value->nama_pelanggan, 1, 0, 'C');
+			$pdf->Cell(70, 7, $value->nama_pelanggan, 1, 0, 'L');
 			$pdf->Cell(50, 7, 'Rp. ' . number_format($value->total_transaksi), 1, 1, 'C');
 		}
 
